@@ -46,15 +46,14 @@ class HashTable {
         for (let i=0; i < this.keyMap.length; i++) {
             if (this.keyMap[i]) {
                 for(let j=0; j < this.keyMap[i].length; j++) {
-                    if (!keysArr.includes(this.keyMap[i][j][1])) {
-                        keysArr.push(this.keyMap[i][j][1])
+                    if (!keysArr.includes(this.keyMap[i][j][0])) {
+                        keysArr.push(this.keyMap[i][j][0])
                     }
                 }
             }
         }
 
-        return valuesArr;
-    }
+        return keysArr;
     }
 
     values() {
@@ -86,3 +85,4 @@ ht.set("plum","#DDA0DD")
 console.log(ht.get("yellow"))
 
 console.log(ht.values())
+console.log(ht.keys())
