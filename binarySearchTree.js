@@ -77,7 +77,7 @@ class BinarySearchTree {
         return current;
     }
 
-    breadthFirstSearch () {
+    breadthFirstSearch() {
         let data = [],
             queue = [],
             node = this.root;
@@ -91,7 +91,7 @@ class BinarySearchTree {
         return data;
     }
 
-    DFSPreOrder () {
+    DFSPreOrder() {
         let data = [];
         // let current = this.root;
 
@@ -104,7 +104,7 @@ class BinarySearchTree {
         return data;
     }
 
-    DFSPostOrder () {
+    DFSPostOrder() {
         let data = [];
 
         function traverse(node) {
@@ -116,7 +116,18 @@ class BinarySearchTree {
         return data;
     }
 
+    DFSInOrder() {
+        let data = [];
 
+        function traverse(node) {
+            if(node.left) traverse(node.left);
+            data.push(node.value); 
+            if(node.right) traverse(node.right);
+            
+        }
+        traverse(this.root);
+        return data;
+    }
 }
 
 
