@@ -76,7 +76,38 @@ class BinarySearchTree {
         if (!current) return false;
         return current;
     }
+
+    breadthFirstSearch () {
+        let data = [],
+            queue = [],
+            node = this.root;
+        queue.push(node);
+        while(queue.length) {
+            node = queue.shift();
+            data.push(node);
+            if(node.left) queue.push(node.left);
+            if(node.right) queue.push(node.right);
+        }
+        return data;
+    }
+
+    DFSPreOrder () {
+        let data = [];
+        // let current = this.root;
+
+        function traverse(node) {
+            data.push(node.value); // value not node, remove value for full node
+            if(node.left) traverse(node.left);
+            if(node.right) traverse(node.right);
+        }
+        traverse(this.root);
+        return data;
+    }
+
+    
 }
+
+
 
 var tree = new BinarySearchTree();
 tree.insert(10)
@@ -87,4 +118,4 @@ tree.insert(2)
 tree.insert(16)
 tree.insert(7)
 
-console.log(tree.find(5))
+console.log(tree.breadthFirstSearch())
