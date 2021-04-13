@@ -1,3 +1,10 @@
+class Node {
+    constructor(val, priority) {
+        this.value = val
+        this.priority = priority;
+    }
+}
+
 class PriorityQueue {
     constructor(){
         this.values = [];
@@ -58,13 +65,6 @@ class PriorityQueue {
             this.values[swap] = element;
             idx = swap;
         }
-    }
-}
-
-class Node {
-    constructor(val, priority){
-        this.val = val;
-        this.priority = priority;
     }
 }
 
